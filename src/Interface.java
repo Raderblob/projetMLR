@@ -13,8 +13,10 @@ public class Interface {
     private Button addUnitButton;
     private Button changeUnitButton;
     private int selectedUnit=0;
+    Map myMap;
 
-    public Interface(Group myRoot){
+    public Interface(Group myRoot, Map myM){
+        myMap=myM;
         myBackground = new Image(new File("resources\\placeholderMenu.png").toURI().toString() );
 
         menuButton = new Button("OpenMenu");
@@ -33,6 +35,7 @@ public class Interface {
             @Override
             public void handle(MouseEvent event) {
                 //spawn the tower obliterating unit
+                myMap.addUnit(0);
             }
         });
         addUnitButton.setLayoutX(100);

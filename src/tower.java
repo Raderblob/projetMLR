@@ -1,15 +1,19 @@
-public class tower {
+import javafx.scene.effect.Light;
+
+public class Tower {
 
     private int posI;
     private int posJ;
     private int attack;
     private int hp;
+    public javafx.geometry.Point2D texCoords;
 
-    public tower(int posI, int posJ, int attack, int hp) {
+    public Tower(int posI, int posJ, int attack, int hp,javafx.geometry.Point2D texC) {
         this.posI=posI;
         this.posJ=posJ;
         this.attack=attack;
         this.hp=hp;
+        this.texCoords = texC;
     }
 
     public void takingDamages (int getDamages){

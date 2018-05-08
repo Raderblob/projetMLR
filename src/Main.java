@@ -11,14 +11,18 @@ import static javafx.beans.binding.Bindings.select;
 public class Main extends Application {
     static public long lastNanoTime;
     static private Interface myInterface;
+    static private MapConfig myMap;
+
 
     public static void main(String[] args) {
-        System.out.println("If you see this then you got githb to work");
         Application.launch();
     }
 
     @Override
     public void start(Stage primaryStage) {
+        myMap = new MapConfig();
+
+
         primaryStage.setTitle("Soo What now?");
 
         Group root = new Group();
@@ -28,7 +32,7 @@ public class Main extends Application {
         root.getChildren().add(canvas);
 
         //stuff
-        myInterface = new Interface(root);
+        myInterface = new Interface(root,myMap.map1);
 
         //endstuff
 
@@ -54,13 +58,19 @@ public class Main extends Application {
     }
 
 
+
     public void logic(double loopTime){
+        myMap.map1.avance();
 
     }
 
     public void render(GraphicsContext displayGraphics){
-        myInterface.renderMe(displayGraphics);
         displayGraphics.fillRect(10,10,80,50);
+        displayGraphics.drawImage(myMap.map1.myMap,0,0);
+        myMap.map1.renderMe(displayGraphics);
+        myInterface.renderMe(displayGraphics);
+
+
     }
 }
 
