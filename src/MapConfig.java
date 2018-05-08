@@ -2,6 +2,7 @@ public class MapConfig {
 
     private int[][] infosTours1= {{1,1,100,2000},{10,6,100,2000}};
     Tower[] tours1;
+    Map map1;
 
     public MapConfig(){
 
