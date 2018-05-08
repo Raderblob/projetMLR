@@ -1,4 +1,5 @@
 import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -13,7 +14,7 @@ public class Interface {
     private Button changeUnitButton;
     private int selectedUnit=0;
 
-    public Interface(){
+    public Interface(Group myRoot){
         myBackground = new Image(new File("resources\\placeholderMenu.png").toURI().toString() );
 
         menuButton = new Button("OpenMenu");
@@ -23,6 +24,9 @@ public class Interface {
                 //Open menu
             }
         });
+        menuButton.setLayoutX(0);
+        menuButton.setLayoutY(550);
+        myRoot.getChildren().add(menuButton);
 
         addUnitButton = new Button("Spawn Unit");
         addUnitButton.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -31,6 +35,9 @@ public class Interface {
                 //spawn the tower obliterating unit
             }
         });
+        addUnitButton.setLayoutX(100);
+        addUnitButton.setLayoutY(550);
+        myRoot.getChildren().add(addUnitButton);
 
         changeUnitButton = new Button("Change selected Unit");
         changeUnitButton.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -43,6 +50,11 @@ public class Interface {
                 }
             }
         });
+        changeUnitButton.setLayoutX(200);
+        changeUnitButton.setLayoutY(550);
+        myRoot.getChildren().add(changeUnitButton);
+
+
     }
 
     public void renderMe(GraphicsContext myGraphics){

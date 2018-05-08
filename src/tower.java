@@ -1,11 +1,11 @@
-public class Tower {
+public class tower {
 
     private int posI;
     private int posJ;
     private int attack;
     private int hp;
 
-    public Tower(int posI, int posJ, int attack, int hp) {
+    public tower(int posI, int posJ, int attack, int hp) {
         this.posI=posI;
         this.posJ=posJ;
         this.attack=attack;

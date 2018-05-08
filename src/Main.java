@@ -28,7 +28,7 @@ public class Main extends Application {
         root.getChildren().add(canvas);
 
         //stuff
-        myInterface = new Interface();
+        myInterface = new Interface(root);
 
         //endstuff
 
