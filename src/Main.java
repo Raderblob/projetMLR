@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import static javafx.beans.binding.Bindings.select;
 public class Main extends Application {
     static public long lastNanoTime;
+    static private Interface myInterface;
 
     public static void main(String[] args) {
         System.out.println("If you see this then you got githb to work");
@@ -25,6 +26,12 @@ public class Main extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         root.getChildren().add(canvas);
+
+        //stuff
+        myInterface = new Interface();
+
+        //endstuff
+
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
@@ -52,6 +59,7 @@ public class Main extends Application {
     }
 
     public void render(GraphicsContext displayGraphics){
+        myInterface.renderMe(displayGraphics);
         displayGraphics.fillRect(10,10,80,50);
     }
 }
