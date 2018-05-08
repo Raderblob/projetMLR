@@ -7,7 +7,10 @@ public class Map {
         this.ImageFileName = ImageFileName;
         this.tours = tours;
     }
-    //image
-    //tableaux tours npc
+
+    public void avance(Unities soldat){
+        /* blablabla
+        soldat.move(blabla);*/
+    }
 
 }
